@@ -12,3 +12,13 @@ let getJohnProfile = () => {
   });
 };
 // Start coding here
+async function displayProfileError() {
+  try {
+    const profile = await getJohnProfile();
+    console.log(profile); // This line will not be executed since the promise rejects
+  } catch (error) {
+    console.log(error); // Catching and logging the error object
+  }
+}
+
+displayProfileError();
